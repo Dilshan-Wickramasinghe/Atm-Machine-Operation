@@ -7,7 +7,9 @@ public class AtmOperationImpl implements AtmOperationInterface {
 
     @Override
     public void viewBalance() {
+        System.out.println("=======================================");
         System.out.println("Availiable Balance: " + atm.getBalance());
+        System.out.println("=======================================");
 
     }
 
@@ -32,7 +34,8 @@ public class AtmOperationImpl implements AtmOperationInterface {
     @Override
     public void depositAmount(double depositAmount) {
         ministmt.put(depositAmount, "Amount deposited");
-        System.out.println(depositAmount + "Deposited successfully!");
+        System.out.println("=======================================");
+        System.out.println(depositAmount + " Deposited successfully!");
         atm.setBalance(atm.getBalance() + depositAmount);
         viewBalance();
 

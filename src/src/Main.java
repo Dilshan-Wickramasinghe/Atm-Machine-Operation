@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         AtmOperationInterface op = new AtmOperationImpl();
-        int atmnumber = 12345;
+        int atmnumber = 123456;
         int atmpin = 123;
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to the Atm machine!");
@@ -12,21 +12,22 @@ public class Main {
         int pin = input.nextInt();
         if ((atmnumber == atmnum) && (atmpin == pin)) {
             while (true) {
+                //System.out.println("=======================================");
                 System.out.println("1. View Availiable Balance\n2. Withdraw Amount\n3. Deposit Amount\n4. View ministatement\n5. Exit");
-                System.out.println(" ");
-                System.out.println("Enter your choice: ");
+                System.out.println("=======================================");
+                System.out.print("Enter your choice: ");
                 int choice = input.nextInt();
                 if (choice == 1) {
                     op.viewBalance();
 
 
                 } else if (choice == 2) {
-                    System.out.println("Enter amount to withdraw: ");
+                    System.out.print("Enter amount to withdraw: ");
                     double withdrawAmount = input.nextDouble();
                     op.withdrawAmount(withdrawAmount);
 
                 } else if (choice == 3) {
-                    System.out.println("Enter Amount to deposit: ");
+                    System.out.print("Enter Amount to deposit: ");
                     double deposit = input.nextInt();
                     op.depositAmount(deposit);
 
@@ -37,7 +38,7 @@ public class Main {
                     System.out.println("Collect your Atm card!\n Thank you!");
                     System.exit(0);
                 } else {
-                    System.out.println("Please enter a valid choice");
+                    System.out.print("Please enter a valid choice");
                 }
             }
 
